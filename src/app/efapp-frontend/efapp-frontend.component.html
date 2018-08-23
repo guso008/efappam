@@ -1,0 +1,24 @@
+<ng-container class="efapp-container">
+  <mat-toolbar class="example-header">
+    <span>Efaceless</span>
+    <span class="example-spacer"></span>
+    <nav mat-tab-nav-bar>
+      <a mat-tab-link routerLink="/first-page">Home</a>
+      <a mat-tab-link routerLink="/first-page">About</a>
+      <a mat-tab-link routerLink="/second-page">Second Page</a>
+      <a mat-tab-link routerLink="/third-page">Third Page</a>
+      <button mat-button (click)="sidenav.toggle()">Sign In/Sign Up</button>
+    </nav>
+  </mat-toolbar>
+  <mat-sidenav-container class="example-container">
+    <mat-sidenav #sidenav mode="side" opened class="example-sidenav"
+                 [fixedInViewport]="options.value.fixed" [fixedTopGap]="options.value.top"
+                 [fixedBottomGap]="options.value.bottom" position="end">
+      {{options.value.fixed ? 'Fixed' : 'Non-fixed'}} Sidenav
+    </mat-sidenav>
+    <mat-sidenav-content>
+      <router-outlet></router-outlet>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+  <mat-toolbar class="example-footer">Footer</mat-toolbar>
+</ng-container>
