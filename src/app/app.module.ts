@@ -20,6 +20,7 @@ import { HeroesComponent } from './heroes/heroes.component';
 import { EfappamTableHeroesComponent } from './efappam-table-heroes/efappam-table-heroes.component';
 import { HeroDetailComponent } from './hero-detail/hero-detail.component';
 import { MessagesComponent } from './messages/messages.component';
+import { EfappListHeroesComponent } from './efapp-list-heroes/efapp-list-heroes.component';
 
 const appRoutes: Routes = [
   { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
@@ -42,7 +43,8 @@ const appRoutes: Routes = [
     HeroesComponent,
     EfappamTableHeroesComponent,
     HeroDetailComponent,
-    MessagesComponent
+    MessagesComponent,
+    EfappListHeroesComponent
   ],
   imports: [
     BrowserModule,

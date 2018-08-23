@@ -1,0 +1,8 @@
+<mat-nav-list>
+  <mat-list-item *ngFor="let hero of heroes">
+    <a matLine href="detail/{{hero.id}}">{{ hero.name }}</a>
+    <button mat-icon-button (click)="showInfo(hero)">
+      <mat-icon>info</mat-icon>
+    </button>
+  </mat-list-item>
+</mat-nav-list>
