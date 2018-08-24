@@ -1,3 +1,10 @@
+<form class="example-form">
+  <mat-form-field class="example-full-width">
+    <input matInput placeholder="Hero name:" #heroName>
+  </mat-form-field>
+  <!-- (click) passes input value to add() and then clears the input -->
+  <button mat-button color="primary" (click)="add(heroName.value); heroName.value=''">Add</button>
+</form>
 <mat-nav-list>
   <mat-list-item *ngFor="let hero of heroes">
     <a matLine href="detail/{{hero.id}}">{{ hero.name }}</a>

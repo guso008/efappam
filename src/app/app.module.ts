@@ -1,5 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA} from '@angular/core';
+import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
+import { InMemoryDataService } from './in-memory-data.service';
 
 import { AppComponent } from './app.component';
 import { RouterModule, Routes} from '@angular/router';
@@ -8,7 +10,7 @@ import { EfappNavComponent } from './efapp-nav/efapp-nav.component';
 import { LayoutModule } from '@angular/cdk/layout';
 import {HttpClientModule} from '@angular/common/http';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
-import { MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, MatListModule, MatGridListModule, MatCardModule, MatMenuModule, MatTableModule, MatTabsModule, MatPaginatorModule, MatSortModule, MatInputModule, MatSnackBarModule} from '@angular/material';
+import { MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, MatListModule, MatGridListModule, MatCardModule, MatMenuModule, MatTableModule, MatTabsModule, MatPaginatorModule, MatSortModule,MatFormFieldModule, MatInputModule, MatSnackBarModule} from '@angular/material';
 import { EfappDashboardComponent } from './efapp-dashboard/efapp-dashboard.component';
 import { EfappTableComponent } from './efapp-table/efapp-table.component';
 import { EfappIndexfrontendComponent } from './efapp-indexfrontend/efapp-indexfrontend.component';
@@ -63,7 +65,14 @@ const appRoutes: Routes = [
     MatSortModule,
     MatTabsModule,
     HttpClientModule,
+    // The HttpClientInMemoryWebApiModule module intercepts HTTP requests
+    // and returns simulated server responses.
+    // Remove it when a real server is ready to receive requests.
+    HttpClientInMemoryWebApiModule.forRoot(
+        InMemoryDataService, { dataEncapsulation: false }
+    ),
     FormsModule,
+    MatFormFieldModule,
     MatInputModule,
     MatSnackBarModule,
     ReactiveFormsModule,
